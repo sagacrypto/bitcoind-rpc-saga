@@ -1,18 +1,18 @@
-bitcoind-rpc-dash.js
+bitcoind-rpc-saga.js
 ===============
 
-[![NPM Package](https://img.shields.io/npm/v/bitcoind-rpc-dash.svg?style=flat-square)](https://www.npmjs.org/package/bitcoind-rpc-dash)
-[![Build Status](https://img.shields.io/travis/dashpay/bitcoind-rpc-dash.svg?branch=master&style=flat-square)](https://travis-ci.org/dashpay/bitcoind-rpc-dash)
-[![Coverage Status](https://img.shields.io/coveralls/dashpay/bitcoind-rpc-dash.svg?style=flat-square)](https://coveralls.io/r/dashpay/bitcoind-rpc-dash?branch=master)
+[![NPM Package](https://img.shields.io/npm/v/bitcoind-rpc-saga.svg?style=flat-square)](https://www.npmjs.org/package/bitcoind-rpc-saga)
+[![Build Status](https://img.shields.io/travis/sagacrypto/bitcoind-rpc-saga.svg?branch=master&style=flat-square)](https://travis-ci.org/sagacrypto/bitcoind-rpc-saga)
+[![Coverage Status](https://img.shields.io/coveralls/sagacrypto/bitcoind-rpc-saga.svg?style=flat-square)](https://coveralls.io/r/sagacrypto/bitcoind-rpc-saga?branch=master)
 
-A client library to connect to Dash Core RPC in JavaScript.
+A client library to connect to SagaCoin Core RPC in JavaScript.
 
 ## Get Started
 
-bitcoind-rpc-dash.js runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
+bitcoind-rpc-saga.js runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
 
 ```bash
-npm install bitcoind-rpc-dash
+npm install bitcoind-rpc-saga
 ```
 
 ## RpcClient
@@ -27,8 +27,8 @@ Config parameters :
 
 Promise vs callback based
 
-  - `require('bitcoind-rpc-dash/promise')` to have promises returned
-  - `require('bitcoind-rpc-dash')` to have callback functions returned
+  - `require('bitcoind-rpc-saga/promise')` to have promises returned
+  - `require('bitcoind-rpc-saga')` to have callback functions returned
 	
 ## Examples
 
@@ -36,16 +36,16 @@ Config:
 ```javascript
 var config = {
     protocol: 'http',
-    user: 'dash',
+    user: 'saga',
     pass: 'local321',
     host: '127.0.0.1',
-    port: 19998
+    port: 48844
 };
 ```
 
 Promise based:
 ```javascript
-var RpcClient = require('bitcoind-rpc-dash/promise');
+var RpcClient = require('bitcoind-rpc-saga/promise');
 var rpc = new RpcClient(config);
 
 rpc.getRawMemPool()
@@ -67,7 +67,7 @@ Callback based (legacy):
 ```javascript
 var run = function() {
   var bitcore = require('bitcore');
-  var RpcClient = require('bitcoind-rpc-dash');
+  var RpcClient = require('bitcoind-rpc-saga');
   var rpc = new RpcClient(config);
 
   var txids = [];
@@ -112,13 +112,13 @@ var run = function() {
 
 You can dynamically access to the help of each method by doing
 ```
-const RpcClient = require('bitcoind-rpc-dash');
+const RpcClient = require('bitcoind-rpc-saga');
 var client = new RPCclient({
     protocol:'http',
-    user: 'dash',
+    user: 'saga',
     pass: 'local321', 
     host: '127.0.0.1', 
-    port: 19998
+    port: 48844
 });
 
 var cb = function (err, data) {
@@ -132,3 +132,4 @@ client.help('getinfo',cb); //Get help of specific method
 **Code released under [the MIT license](https://github.com/bitpay/bitcore/blob/master/LICENSE).**
 
 Copyright 2013-2014 BitPay, Inc.
+Copyright 2018 Saga Development Team.
